@@ -44,6 +44,28 @@
       -webkit-appearance: none; /* Remove default styling */
     }
   }
+
+  /* Special fix for contenteditable divs */
+[contenteditable="true"] {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+  -webkit-appearance: none;
+  min-height: 40px;
+}
+
+/* Target your specific responsibility textbox */
+div[role="textbox"][contenteditable="true"] {
+  font-size: 16px !important;
+}
+
+/* iOS-specific overrides */
+@supports (-webkit-touch-callout: none) {
+  .text-sm[contenteditable="true"],
+  div[role="textbox"] {
+    font-size: 16px !important;
+    transform: scale(1);
+  }
+}
   
   /* Fix iOS touch delay */
   a, button {
