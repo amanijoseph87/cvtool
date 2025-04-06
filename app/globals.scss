@@ -70,6 +70,10 @@ div[role="textbox"][contenteditable="true"] {
   }
 }
 
+.w-44 {
+  width: 20rem !important;
+}
+
 /* Remove iOS tap highlight color */
 @media (hover: none) {
   a:active, button:active {
