@@ -131,6 +131,10 @@ div[role="textbox"][contenteditable="true"] {
   .btn-gap-2, .btn-filled-gap-2 {
     @apply gap-2;
   }
+
+  .btn-filled {
+    color: #ffffff!important;
+    }
   
   /* Card component */
   .card {
