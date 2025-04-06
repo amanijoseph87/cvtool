@@ -1,9 +1,5 @@
-const layout = ({children}) => {
-  return (
-    <div className="">            
-        {children}
-        </div>
-  )
-}
+const layout = ({ children }) => {
+  return <div className="">{children}</div>;
+};
 
-export default layout
+export default layout;

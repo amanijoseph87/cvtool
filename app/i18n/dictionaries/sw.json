@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "title": "Jinsi ya Kutengeneza CV | Zoom Tanzania Free CV Resume Maker",
+    "description": "Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu kwa kutumia Zoom Tanzania CV Resume maker. Tumia zana yetu bure kutengeneza CV inayovutia waajiri na kuongeza nafasi zako za kupata kazi.",
+    "og": {
+      "title": "Jinsi ya Kutengeneza CV | Zoom Tanzania",
+      "description": "Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu kwa kutumia Zoom Tanzania CV Resume maker",
+      "siteName": "Zoom Tanzania CV Maker"
+    },
+    "twitter": {
+      "title": "Jinsi ya Kutengeneza CV | Zoom Tanzania Free CV Resume Maker",
+      "description": "Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu kwa kutumia Zoom Tanzania CV Resume maker"
+    }
+  },
+  "tabs": {
+    "contact": {
+      "title": "Mawasiliano | Zoom Tanzania CV Resume Maker",
+      "description": "Jaza taarifa zako za mawasiliano kwenye CV yako. Ongeza jina, barua pepe, namba ya simu na mitandao ya kijamii."
+    },
+    "summary": {
+      "title": "Muhtasari | Zoom Tanzania CV Resume Maker",
+      "description": "Andika muhtasari wa CV yako unaovutia waajiri. Eleza ujuzi na uzoefu wako kwa ufupi."
+    },
+    "education": {
+      "title": "Elimu | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza taarifa za elimu yako kwenye CV. Weka vyuo, shahada, na mafanikio yako ya kitaaluma."
+    },
+    "experience": {
+      "title": "Uzoefu | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza uzoefu wako wa kazi kwenye CV. Eleza majukumu na mafanikio yako katika kazi za awali."
+    },
+    "projects": {
+      "title": "Miradi | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza miradi uliyofanya kwenye CV yako. Onesha ujuzi wako wa kiufundi na ubunifu."
+    },
+    "skills": {
+      "title": "Ujuzi | Zoom Tanzania CV Resume Maker",
+      "description": "Orodhesha ujuzi wako muhimu kwenye CV. Ongeza ujuzi wa kiufundi na kibinadamu unaokufanya uwe mwajiriwa bora."
+    },
+    "certificates": {
+      "title": "Vyeti | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza vyeti na mafunzo uliyopata kwenye CV yako. Onesha ujuzi wako uliothibitishwa."
+    },
+    "languages": {
+      "title": "Lugha | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza lugha unazozungumza kwenye CV yako. Eleza kiwango chako cha ufasaha katika kila lugha."
+    },
+    "references": {
+      "title": "Marejeleo | Zoom Tanzania CV Resume Maker",
+      "description": "Ongeza watu wanaoweza kutoa ushahidi wa kazi yako kwenye CV. Weka mawasiliano ya wasimamizi au wenzako wa zamani."
+    }
+  },
+  "ui": {
+    "languageSwitcher": "Lugha",
+    "english": "Kiingereza",
+    "swahili": "Kiswahili"
+  }
+}
