@@ -48,8 +48,6 @@
   /* Special fix for contenteditable divs */
 [contenteditable="true"] {
   font-size: 16px !important;
-  -webkit-text-size-adjust: 100%;
-  -webkit-appearance: none;
   min-height: 40px;
 }
 
@@ -63,7 +61,6 @@ div[role="textbox"][contenteditable="true"] {
   .text-sm[contenteditable="true"],
   div[role="textbox"] {
     font-size: 16px !important;
-    transform: scale(1);
   }
 }
   
