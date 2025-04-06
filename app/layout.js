@@ -17,24 +17,50 @@ export const metadata = {
         'max-image-preview': 'large',
         'max-video-preview': -1,
     },
+    viewport: {
+        width: 'device-width',
+        initialScale: 1,
+        maximumScale: 1,
+        userScalable: false,
+    },
     openGraph: {
         title: 'Jinsi ya Kutengeneza CV | Zoom Tanzania',
         description: 'Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu kwa kutumia Zoom Tanzania CV Resume maker',
-        images: `/favicon.png`,
-        icons: {
-            icon: `/faviconi.png`,
-        },
+        url: 'https://cv.zoomtanzania.net/',
+        images: [
+            {
+                url: 'https://cv.zoomtanzania.net/favicon.png',
+                width: 800,
+                height: 600,
+                alt: 'Zoom Tanzania CV Maker',
+            }
+        ],
+        siteName: 'Zoom Tanzania CV Maker',
         type: 'website',
         locale: 'sw_TZ',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Jinsi ya Kutengeneza CV | Zoom Tanzania Free CV Resume Maker',
+        description: 'Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu kwa kutumia Zoom Tanzania CV Resume maker',
+        images: ['https://cv.zoomtanzania.net/favicon.png'],
+        site: '@zoomtanzania',
     },
     alternates: {
         canonical: 'https://cv.zoomtanzania.net/',
     },
+    icons: {
+        icon: '/faviconi.png',
+        apple: '/apple-icon.png',
+    }
 };
 
 export default function RootLayout({ children }) {
     return (
         <html lang="sw">
+            <head>
+                {/* Any additional scripts or links you need */}
+            </head>
             <body>
                 <ReduxProvider>
                     <Header />
