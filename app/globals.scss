@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 // Use professional serif and sans-serif fonts commonly used in CVs
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 
 @layer base {
   /* Reset for all elements */
@@ -11,31 +11,43 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   /* Ensure proper viewport settings for iOS devices */
   html {
     @apply overflow-x-hidden;
     -webkit-text-size-adjust: 100%;
     height: -webkit-fill-available;
   }
-  
+
   /* Body styles */
   body {
     @apply bg-gray-800 text-gray-200 caret-primary-400 min-h-screen overflow-x-hidden;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      sans-serif;
     min-height: -webkit-fill-available;
     /* Prevent iOS text size adjustment after orientation changes */
     text-size-adjust: none;
   }
-  
+
   /* Prevent iOS form input zoom - stronger implementation */
-  input, select, textarea, button {
+  input,
+  select,
+  textarea,
+  button {
     font-size: 16px !important; /* Minimum 16px to prevent iOS zoom */
     transform: scale(1); /* Force hardware acceleration */
   }
-  
+
   /* Special input zoom prevention for iOS */
-  @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
     select,
     textarea,
     input,
@@ -46,26 +58,27 @@
   }
 
   /* Special fix for contenteditable divs */
-[contenteditable="true"] {
-  font-size: 16px !important;
-  min-height: 40px;
-}
+  [contenteditable="true"] {
+    font-size: 16px !important;
+    min-height: 40px;
+  }
 
-/* Target your specific responsibility textbox */
-div[role="textbox"][contenteditable="true"] {
-  font-size: 16px !important;
-}
-
-/* iOS-specific overrides */
-@supports (-webkit-touch-callout: none) {
-  .text-sm[contenteditable="true"],
-  div[role="textbox"] {
+  /* Target your specific responsibility textbox */
+  div[role="textbox"][contenteditable="true"] {
     font-size: 16px !important;
   }
-}
-  
+
+  /* iOS-specific overrides */
+  @supports (-webkit-touch-callout: none) {
+    .text-sm[contenteditable="true"],
+    div[role="textbox"] {
+      font-size: 16px !important;
+    }
+  }
+
   /* Fix iOS touch delay */
-  a, button {
+  a,
+  button {
     touch-action: manipulation;
   }
 }
@@ -74,9 +87,23 @@ div[role="textbox"][contenteditable="true"] {
   width: 20rem !important;
 }
 
+/* Desktop layout improvements */
+@media (min-width: 1280px) {
+  .max-w-screen-xl {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .max-w-screen-xl {
+    max-width: 1400px;
+  }
+}
+
 /* Remove iOS tap highlight color */
 @media (hover: none) {
-  a:active, button:active {
+  a:active,
+  button:active {
     -webkit-tap-highlight-color: transparent;
   }
 }
@@ -87,63 +114,68 @@ div[role="textbox"][contenteditable="true"] {
   .btn {
     @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
     font-size: 16px; /* Prevent zoom on iOS */
-    
+
     @screen md {
       @apply text-base;
     }
-    
+
     @screen 2xl {
       @apply text-lg;
     }
   }
-  
+
   /* Filled button variant */
   .btn-filled {
     @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-primary-500 bg-primary-400 text-gray-900 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
     font-size: 16px; /* Prevent zoom on iOS */
-    
+
     @screen md {
       @apply text-base;
     }
-    
+
     @screen 2xl {
       @apply text-lg;
     }
   }
-  
+
   /* Additional button modifiers that won't break */
-  .btn-auto, .btn-filled-auto {
+  .btn-auto,
+  .btn-filled-auto {
     @apply w-auto;
   }
-  
-  .btn-full, .btn-filled-full {
+
+  .btn-full,
+  .btn-filled-full {
     @apply w-full;
   }
-  
-  .btn-mt-6, .btn-filled-mt-6 {
+
+  .btn-mt-6,
+  .btn-filled-mt-6 {
     @apply mt-6;
   }
-  
-  .btn-ml-auto, .btn-filled-ml-auto {
+
+  .btn-ml-auto,
+  .btn-filled-ml-auto {
     @apply ml-auto;
   }
-  
-  .btn-gap-2, .btn-filled-gap-2 {
+
+  .btn-gap-2,
+  .btn-filled-gap-2 {
     @apply gap-2;
   }
 
   .btn-filled {
-    color: #ffffff!important;
-    }
-  
+    color: #ffffff !important;
+  }
+
   /* Card component */
   .card {
-    @apply rounded-md border border-gray-600 bg-gray-700/25 p-4 shadow-xl;
-    
+    @apply rounded-lg border border-gray-600 bg-gray-700/25 p-4 shadow-xl;
+
     @screen md {
       @apply p-6;
     }
-    
+
     @screen 2xl {
       @apply p-8;
     }
@@ -155,24 +187,24 @@ div[role="textbox"][contenteditable="true"] {
   .gradient {
     @apply bg-gradient-to-r from-primary-400 to-green-400;
   }
-  
+
   .text-gradient {
     @apply gradient bg-clip-text text-transparent;
   }
-  
+
   /* Safe area insets for notched devices */
   .safe-top {
     padding-top: env(safe-area-inset-top, 0);
   }
-  
+
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom, 0);
   }
-  
+
   .safe-left {
     padding-left: env(safe-area-inset-left, 0);
   }
-  
+
   .safe-right {
     padding-right: env(safe-area-inset-right, 0);
   }
@@ -181,7 +213,7 @@ div[role="textbox"][contenteditable="true"] {
 /* Tab styling */
 .tabs {
   &::after {
-    content: '';
+    content: "";
     @apply absolute bottom-0 left-0 h-2 w-full;
   }
 }
@@ -189,14 +221,14 @@ div[role="textbox"][contenteditable="true"] {
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   @apply size-1 md:size-1.5;
-  
+
   &-track {
     @apply bg-gray-700;
   }
-  
+
   &-thumb {
     @apply bg-primary-500 rounded-sm;
-    
+
     &:hover {
       @apply bg-primary-500;
     }
@@ -210,12 +242,14 @@ div[role="textbox"][contenteditable="true"] {
     /* Fixes Safari-specific rendering issues */
     transform: translateZ(0);
   }
-  
+
   /* Additional fixes for iOS Safari zooming issues */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px !important;
   }
-  
+
   /* Viewport meta adjustment for iOS */
   meta[name="viewport"] {
     content: "width=device-width, initial-scale=1, maximum-scale=1" !important;
