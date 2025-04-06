@@ -28,9 +28,21 @@
     text-size-adjust: none;
   }
   
-  /* Prevent iOS form input zoom */
+  /* Prevent iOS form input zoom - stronger implementation */
   input, select, textarea, button {
-    font-size: 16px; /* Minimum 16px to prevent iOS zoom */
+    font-size: 16px !important; /* Minimum 16px to prevent iOS zoom */
+    transform: scale(1); /* Force hardware acceleration */
+  }
+  
+  /* Special input zoom prevention for iOS */
+  @media screen and (-webkit-min-device-pixel-ratio: 0) { 
+    select,
+    textarea,
+    input,
+    .input-field {
+      font-size: 16px !important; /* Additional iOS zoom prevention */
+      -webkit-appearance: none; /* Remove default styling */
+    }
   }
   
   /* Fix iOS touch delay */
@@ -60,10 +72,41 @@
     @screen 2xl {
       @apply text-lg;
     }
+  }
+  
+  /* Filled button variant */
+  .btn-filled {
+    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-primary-500 bg-primary-400 text-gray-900 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
+    font-size: 16px; /* Prevent zoom on iOS */
     
-    &-filled {
-      @apply border-primary-500 bg-primary-400 text-gray-900;
+    @screen md {
+      @apply text-base;
     }
+    
+    @screen 2xl {
+      @apply text-lg;
+    }
+  }
+  
+  /* Additional button modifiers that won't break */
+  .btn-auto, .btn-filled-auto {
+    @apply w-auto;
+  }
+  
+  .btn-full, .btn-filled-full {
+    @apply w-full;
+  }
+  
+  .btn-mt-6, .btn-filled-mt-6 {
+    @apply mt-6;
+  }
+  
+  .btn-ml-auto, .btn-filled-ml-auto {
+    @apply ml-auto;
+  }
+  
+  .btn-gap-2, .btn-filled-gap-2 {
+    @apply gap-2;
   }
   
   /* Card component */
@@ -140,4 +183,17 @@
     /* Fixes Safari-specific rendering issues */
     transform: translateZ(0);
   }
+  
+  /* Additional fixes for iOS Safari zooming issues */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+  
+  /* Viewport meta adjustment for iOS */
+  meta[name="viewport"] {
+    content: "width=device-width, initial-scale=1, maximum-scale=1" !important;
+  }
 }
+
+/* Add this meta tag to your HTML head or update it if it exists */
+/* <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> */
