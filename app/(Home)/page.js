@@ -23,24 +23,29 @@ const Home = () => {
                 </p>
                 
                 <div className="mt-6 flex flex-wrap items-center justify-start gap-3 md:mt-8">
-    <Link 
-        href="https://www.zoomtanzania.net/blog/post/jinsi-ya-kutengeneza-cv-bora-inayoendana-na-mfumo-wa-ats"
-        className="w-full md:w-auto"
-        target="_blank"
-        rel="noopener noreferrer"
-    >
-        <div className="flex items-center w-full md:w-auto text-sm text-blue-300 mb-2 md:mb-0">
-            <FaFileAlt className="mr-2" /> 
-            <span>CV inayokubalika na mifumo ya ATS</span>
-        </div>
-    </Link>
-</div>
-                    <div className="flex items-center w-full md:w-auto text-sm text-blue-300 md:ml-6">
-                        <FaSearch className="mr-2" /> 
-                        <span>Inayotambulika na waajiri</span>
-                    </div>
+                    <Link 
+                        href="https://www.zoomtanzania.net/blog/post/jinsi-ya-kutengeneza-cv-bora-inayoendana-na-mfumo-wa-ats"
+                        className="w-full md:w-auto"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div className="flex items-center w-full md:w-auto text-sm text-blue-300 mb-2 md:mb-0">
+                            <FaFileAlt className="mr-2" /> 
+                            <span>CV inayokubalika na mifumo ya ATS</span>
+                        </div>
+                    </Link>
+                    
+                    <Link
+                        href="#"
+                        className="w-full md:w-auto md:ml-6"
+                    >
+                        <div className="flex items-center w-full md:w-auto text-sm text-blue-300">
+                            <FaSearch className="mr-2" /> 
+                            <span>Inayotambulika na waajiri</span>
+                        </div>
+                    </Link>
                 </div>
-
+                
                 <div className="mt-8 flex flex-col items-center justify-start gap-3 md:mt-12 md:flex-row md:gap-8">
                     <Link href={'/editor'} className="btn-filled w-full md:w-auto">
                         <span>Tengeneza CV Yako</span>
