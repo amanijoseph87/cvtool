@@ -135,9 +135,12 @@ const Experience = ({ data }) => (
                 </View>
 
                 <View style={styles.lists}>
-                    {description?.split('\n').map((responsibility, i) => (
-                        <ListItem key={i}>{responsibility}</ListItem>
-                    ))}
+                    {description
+                        ?.split('\n')
+                        .filter(line => line.trim()) // Filter out empty lines
+                        .map((responsibility, i) => (
+                            <ListItem key={i}>{responsibility}</ListItem>
+                        ))}
                 </View>
                 {i !== data.length - 1 && <View style={styles.line} />}
             </View>
@@ -147,7 +150,7 @@ const Experience = ({ data }) => (
 
 const Skills = ({ data }) => (
     <Section title={'skills'}>
-        {data?.split('\n').map((line, i) => (
+        {data?.split('\n').filter(line => line.trim()).map((line, i) => (
             <Text key={i} style={{ fontSize: 11 }}>
                 {line}
             </Text>
