@@ -12,7 +12,7 @@ const Home = () => {
                     <span className="text-gradient">Zoom Tanzania Resume Builder</span>
                 </h4>
                 <h1 className="text-3xl md:mt-2 md:text-4xl 2xl:text-[2.75rem]">
-                    <span className="text-gradient">Tengeneza CV Bora | Free CV Maker</span>
+                    <span className="text-gradient">Tengeneza CV Bora</span>
                 </h1>
                 <p className="mt-3 max-w-screen-sm text-sm text-gray-300 md:mt-10 md:text-lg">
                     Jifunze <strong>jinsi ya kutengeneza CV</strong> bora na ya kitaalamu na Zoom Tanzania free CV maker. 
