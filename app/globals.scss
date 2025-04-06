@@ -2,65 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
-// @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-
-// import nuinto
+/* Import Ubuntu font with font-display: swap for better performance */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 @layer base {
-    body {
-        @apply bg-gray-800 text-gray-200 caret-primary-400;
-        font-family: 'Ubuntu', sans-serif;
-    }
+  /* Reset for all elements */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Ensure proper viewport settings for iOS devices */
+  html {
+    @apply overflow-x-hidden;
+    -webkit-text-size-adjust: 100%;
+    height: -webkit-fill-available;
+  }
+  
+  /* Body styles */
+  body {
+    @apply bg-gray-800 text-gray-200 caret-primary-400 min-h-screen overflow-x-hidden;
+    font-family: 'Ubuntu', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: -webkit-fill-available;
+    /* Prevent iOS text size adjustment after orientation changes */
+    text-size-adjust: none;
+  }
+  
+  /* Prevent iOS form input zoom */
+  input, select, textarea, button {
+    font-size: 16px; /* Minimum 16px to prevent iOS zoom */
+  }
+  
+  /* Fix iOS touch delay */
+  a, button {
+    touch-action: manipulation;
+  }
 }
 
+/* Remove iOS tap highlight color */
+@media (hover: none) {
+  a:active, button:active {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Responsive sizes for different Apple devices */
 @layer components {
-    .btn {
-        @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125 2xl:text-lg;
-
-        &-filled {
-            @extend .btn;
-            @apply border-primary-500 bg-primary-400 text-gray-900;
-        }
+  /* Base button styles */
+  .btn {
+    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
+    font-size: 16px; /* Prevent zoom on iOS */
+    
+    @screen md {
+      @apply text-base;
     }
-
-    .card {
-        @apply rounded-md border border-gray-600 bg-gray-700/25 p-4 shadow-xl md:p-6 2xl:p-8;
+    
+    @screen 2xl {
+      @apply text-lg;
     }
+    
+    &-filled {
+      @apply border-primary-500 bg-primary-400 text-gray-900;
+    }
+  }
+  
+  /* Card component */
+  .card {
+    @apply rounded-md border border-gray-600 bg-gray-700/25 p-4 shadow-xl;
+    
+    @screen md {
+      @apply p-6;
+    }
+    
+    @screen 2xl {
+      @apply p-8;
+    }
+  }
 }
 
+/* Utility classes */
 @layer utilities {
-    .gradient {
-        @apply bg-gradient-to-r from-primary-400 to-green-400;
-    }
-
-    .text-gradient {
-        @extend .gradient;
-        @apply bg-clip-text text-transparent;
-    }
+  .gradient {
+    @apply bg-gradient-to-r from-primary-400 to-green-400;
+  }
+  
+  .text-gradient {
+    @apply gradient bg-clip-text text-transparent;
+  }
+  
+  /* Safe area insets for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+  
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0);
+  }
+  
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0);
+  }
 }
 
+/* Tab styling */
 .tabs {
-    &::after {
-        content: '';
-        @apply absolute bottom-0 left-0 h-2 w-full;
-    }
+  &::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-2 w-full;
+  }
 }
 
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-
-    @apply  md:size-1.5;
-
-    &-track {
-        @apply bg-gray-700 ;
+  @apply size-1 md:size-1.5;
+  
+  &-track {
+    @apply bg-gray-700;
+  }
+  
+  &-thumb {
+    @apply bg-primary-500 rounded-sm;
+    
+    &:hover {
+      @apply bg-primary-500;
     }
+  }
+}
 
-    &-thumb {
-        @apply bg-primary-500 rounded-sm;
-
-        &:hover{
-            @apply bg-primary-500;
-        }
-    }
-
-
+/* Media queries for Safari-specific fixes */
+@supports (-webkit-touch-callout: none) {
+  /* Safari-specific adjustments */
+  .safari-fix {
+    /* Fixes Safari-specific rendering issues */
+    transform: translateZ(0);
+  }
 }
