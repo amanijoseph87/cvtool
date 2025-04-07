@@ -8,15 +8,15 @@ const Home = () => {
   return (
     <div className="mx-auto flex h-full min-h-[calc(100vh-5rem)] max-w-screen-xl flex-col-reverse items-center justify-center gap-8 overflow-hidden px-4 py-6 text-center md:flex-row md:justify-between md:text-left md:px-8 lg:px-12 xl:gap-12">
       <div className="md:max-w-[55%] lg:max-w-[60%] xl:pr-4">
-        <h4 className="text-base md:text-xl">
-          <span className="text-gradient">Zoom Tanzania Resume Builder</span>
+        <h4 className="text-base md:text-xl text-black dark:text-white">
+          <span>Zoom Tanzania Resume Builder</span>
         </h4>
-        <h1 className="text-3xl md:mt-2 md:text-4xl 2xl:text-[2.75rem]">
-          <span className="text-gradient">Tengeneza CV Bora</span>
+        <h1 className="text-3xl md:mt-2 md:text-4xl 2xl:text-[2.75rem] text-[#4d4ed4] font-bold">
+          <span>Tengeneza CV Bora</span>
         </h1>
-        <p className="mt-3 max-w-screen-sm text-sm text-gray-300 md:mt-6 lg:mt-8 md:text-lg">
-          Jifunze <strong>jinsi ya kutengeneza CV</strong> bora na ya kitaalamu
-          na Zoom Tanzania free CV maker.
+        <p className="mt-3 max-w-screen-sm text-sm text-black dark:text-gray-300 md:mt-6 lg:mt-8 md:text-lg">
+          Jifunze jinsi ya kutengeneza CV bora na ya kitaalamu na Zoom Tanzania
+          free CV maker.
           <span className="hidden md:inline">
             {" "}
             Hakuna haja ya kuingia au kujisajili, Weka taarifa zako na upate CV
@@ -32,14 +32,14 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex items-center w-full md:w-auto text-sm text-blue-300 mb-2 md:mb-0">
+            <div className="flex items-center w-full md:w-auto text-sm text-[#4d4ed4] dark:text-blue-300 mb-2 md:mb-0">
               <FaFileAlt className="mr-2" />
               <span>CV inayokubalika na mifumo ya ATS</span>
             </div>
           </Link>
 
           <Link href="#" className="w-full md:w-auto md:ml-6">
-            <div className="flex items-center w-full md:w-auto text-sm text-blue-300">
+            <div className="flex items-center w-full md:w-auto text-sm text-[#4d4ed4] dark:text-blue-300">
               <FaSearch className="mr-2" />
               <span>Inayotambulika na waajiri</span>
             </div>
@@ -60,7 +60,7 @@ const Home = () => {
           </Link>
         </div>
 
-        <p className="mt-6 text-xs text-gray-400">
+        <p className="mt-6 text-xs text-black dark:text-gray-400">
           CV maker #1 Tanzania | Jinsi ya kutengeneza CV | Format ya CV Tanzania
         </p>
       </div>

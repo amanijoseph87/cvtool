@@ -21,7 +21,7 @@
 
   /* Body styles */
   body {
-    @apply bg-gray-800 text-gray-200 caret-primary-400 min-h-screen overflow-x-hidden;
+    @apply bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-200 caret-primary-400 min-h-screen overflow-x-hidden transition-colors duration-200;
     font-family:
       "Inter",
       -apple-system,
@@ -112,7 +112,7 @@
 @layer components {
   /* Base button styles */
   .btn {
-    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-gray-600 bg-gray-700 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
+    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-primary-500 bg-primary-400 dark:bg-gray-700 text-white dark:text-white px-6 py-1.5 font-medium shadow-lg shadow-primary-500/25 dark:shadow-gray-900/25 hover:brightness-125 transition-colors duration-200;
     font-size: 16px; /* Prevent zoom on iOS */
 
     @screen md {
@@ -126,7 +126,7 @@
 
   /* Filled button variant */
   .btn-filled {
-    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-primary-500 bg-primary-400 text-gray-900 px-6 py-1.5 font-medium shadow-lg shadow-gray-900/25 hover:brightness-125;
+    @apply flex cursor-pointer items-center justify-center gap-3 rounded-md border border-primary-500 bg-primary-400 text-white px-6 py-1.5 font-medium shadow-lg shadow-primary-500/25 hover:brightness-125 transition-colors duration-200;
     font-size: 16px; /* Prevent zoom on iOS */
 
     @screen md {
@@ -164,13 +164,14 @@
     @apply gap-2;
   }
 
+  /* Ensure text is white in filled buttons */
   .btn-filled {
     color: #ffffff !important;
   }
 
   /* Card component */
   .card {
-    @apply rounded-lg border border-gray-600 bg-gray-700/25 p-4 shadow-xl;
+    @apply rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-700/25 p-4 shadow-xl transition-colors duration-200;
 
     @screen md {
       @apply p-6;
@@ -223,14 +224,14 @@
   @apply size-1 md:size-1.5;
 
   &-track {
-    @apply bg-gray-700;
+    @apply bg-gray-200 dark:bg-gray-700 transition-colors duration-200;
   }
 
   &-thumb {
-    @apply bg-primary-500 rounded-sm;
+    @apply bg-gray-400 dark:bg-primary-500 rounded-sm transition-colors duration-200;
 
     &:hover {
-      @apply bg-primary-500;
+      @apply bg-gray-500 dark:bg-primary-500;
     }
   }
 }

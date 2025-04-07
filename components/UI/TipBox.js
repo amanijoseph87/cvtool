@@ -2,7 +2,7 @@ import React from "react";
 
 const TipBox = ({ tip }) => {
   return (
-    <div className="bg-gray-800 border border-gray-700 rounded-md p-4 mt-6 mb-6 text-gray-300">
+    <div className="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md p-4 mt-6 mb-6 text-gray-700 dark:text-gray-300 transition-colors duration-200">
       <div className="flex items-start">
         <div className="flex-shrink-0 mt-0.5">
           <svg

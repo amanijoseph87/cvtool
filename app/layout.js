@@ -59,9 +59,22 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="sw">
-      <head>{/* Any additional scripts or links you need */}</head>
-      <body>
+    <html lang="sw" className="dark">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              // On page load or when changing themes, best to add inline in \`head\` to avoid FOUC
+              if (localStorage.theme === 'light' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.documentElement.classList.remove('dark')
+              } else {
+                document.documentElement.classList.add('dark')
+              }
+            `,
+          }}
+        />
+      </head>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
         <ReduxProvider>
           <Header />
           <div className="mx-auto min-h-[calc(100vh-3rem)]">{children}</div>
