@@ -1,18 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import ResumeFields from "@/config/ResumeFields";
 import ThemeToggle from "@/components/UI/ThemeToggle";
 
-const Header = () => {
+// Create a separate component that uses useSearchParams
+const NavigationContent = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const isEditorPage = pathname === "/editor";
   const currentTab = searchParams.get("tab") || "contact";
   const [isMobile, setIsMobile] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Default to closed, will be updated in useEffect
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Check if the screen is mobile size
   useEffect(() => {
@@ -198,6 +199,30 @@ const Header = () => {
         </div>
       </nav>
     </header>
+  );
+};
+
+// Main Header component that wraps NavigationContent in a Suspense boundary
+const Header = () => {
+  return (
+    <Suspense
+      fallback={
+        <header className="mx-auto flex max-w-screen-xl items-center justify-between mt-3 px-3 py-2.5 2xl:max-w-screen-2xl relative">
+          <div className="flex items-center">
+            <Link href={"/"}>
+              <img
+                src="/faviconi.png"
+                alt="Zoom Tanzania"
+                className="h-10 w-auto"
+              />
+            </Link>
+          </div>
+          <div className="h-8 w-8"></div> {/* Placeholder for menu button */}
+        </header>
+      }
+    >
+      <NavigationContent />
+    </Suspense>
   );
 };
 

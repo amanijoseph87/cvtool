@@ -3,8 +3,10 @@
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { i18n, getAlternateLocale } from "./settings";
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function LanguageSwitcher({ locale, dictionary }) {
+// This component contains the parts that need searchParams
+const LanguageSwitcherContent = ({ locale, dictionary }) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -56,5 +58,30 @@ export default function LanguageSwitcher({ locale, dictionary }) {
         </Link>
       </div>
     </div>
+  );
+};
+
+// Main component that wraps the content with Suspense
+export default function LanguageSwitcher({ locale, dictionary }) {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-gray-400">
+            {dictionary.ui.languageSwitcher}:
+          </span>
+          <div className="flex gap-2">
+            <span className="text-sm px-2 py-1 rounded bg-gray-700">
+              {dictionary.ui.english}
+            </span>
+            <span className="text-sm px-2 py-1 rounded bg-gray-700">
+              {dictionary.ui.swahili}
+            </span>
+          </div>
+        </div>
+      }
+    >
+      <LanguageSwitcherContent locale={locale} dictionary={dictionary} />
+    </Suspense>
   );
 }
