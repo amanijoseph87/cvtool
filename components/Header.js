@@ -191,21 +191,10 @@ const NavigationContent = ({ headerRef }) => {
                   className="h-10 w-auto"
                 />
               </Link>
-              <button onClick={toggleMenu} className="text-white">
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
+              {/* Dark mode toggle replaces the close button */}
+              <div onClick={(e) => e.stopPropagation()}>
+                <ThemeToggle />
+              </div>
             </div>
 
             <ul className="flex flex-col space-y-4">
@@ -277,10 +266,7 @@ const NavigationContent = ({ headerRef }) => {
             </ul>
           </div>
 
-          {/* Theme toggle at the bottom */}
-          <div className="mt-6 flex justify-end">
-            <ThemeToggle />
-          </div>
+          {/* Removed ThemeToggle from bottom since it's now at the top */}
         </div>
       </nav>
     </header>
