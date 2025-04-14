@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://cv.zoomtanzania.net/</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=contact</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=summary</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=education</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=experience</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=projects</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=skills</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=certificates</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=languages</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cv.zoomtanzania.net/editor?tab=references</loc>
+  <lastmod>2025-04-14T17:15:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+</urlset>
